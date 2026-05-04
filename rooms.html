@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rooms</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Our Rooms</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.php">Contact</a>
+    </nav>
+</header>
+
+<!-- BIG PREVIEW -->
+<section class="preview">
+    <img id="previewImage" src="Images/single.jpg">
+    <h2 id="previewTitle">Single Room</h2>
+</section>
+
+
+<section class="rooms">
+
+    <div class="room" onclick="selectRoom('Single Room','Rs 1200 / night','Images/single.jpg')">
+        <img src="Images/single.jpg">
+        <h3>Single Room</h3>
+    </div>
+
+    <div class="room" onclick="selectRoom('Double Room','Rs 1600 / night','Images/double.jpg')">
+        <img src="Images/double.jpg">
+        <h3>Double Room</h3>
+    </div>
+
+    <div class="room" onclick="selectRoom('Deluxe Room','Rs 1800 / night','Images/deluxe.jpg')">
+        <img src="Images/deluxe.jpg">
+        <h3>Deluxe Room</h3>
+    </div>
+
+    <div class="room" onclick="selectRoom('King Room','Rs 2000 / night','Images/king.jpg')">
+        <img src="Images/king.jpg">
+        <h3>King Room</h3>
+    </div>
+
+</section>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span onclick="closePopup()" class="close">&times;</span>
+        <h2 id="popupTitle"></h2>
+        
+        <a href="gallery.html" class="btn">View Gallery</a>
+    </div>
+</div>
+
+<footer>
+    <p>© 2024 Royal Hotel</p>
+</footer>
+
+<script>
+function selectRoom(name, price, image) {
+    document.getElementById("previewImage").src = image;
+    document.getElementById("previewTitle").innerText = name;
+    //document.getElementById("previewPrice").innerText = price;
+
+    document.getElementById("popupTitle").innerText = name;
+    //document.getElementById("popupPrice").innerText = price;
+
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
