@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+<header>
+    <h1>About Our Hotel</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.php">Contact</a>
+    </nav>
+</header>
+
+<section class="content">
+
+    <!-- FULL WIDTH SECTION -->
+    <h2>Who We Are</h2>
+    <p>
+        Royal Hotel provides comfortable rooms, quality service,
+        and a peaceful environment for business and leisure travelers.
+    </p>
+
+    <!-- FULL WIDTH SECTION -->
+    <h2>Facilities</h2>
+    <ul>
+        <li>Air Conditioned Rooms</li>
+        <li>Free Wi-Fi</li>
+        <li>Restaurant</li>
+        <li>Room Service</li>
+        <li>Elevator</li>
+        <li>Smoke-Free Property</li>
+    </ul>
+
+    <!-- FULL WIDTH SECTION -->
+
+    <!-- GRID START -->
+    <div class="accordion-grid">
+
+        <div class="accordion-box">
+            <button class="accordion">
+                <i class="fa-solid fa-car"></i> Parking & Transportation
+            </button>
+            <div class="panel">
+                <h3>Parking</h3>
+                <ul>
+                    <li>Free on-site parking</li>
+                    <li>Secure parking area</li>
+                    <li>24-hour access</li>
+                </ul>
+
+                <h3>Transportation</h3>
+                <ul>
+                    <li>Reengus Railway Station 100m walk</li>
+                    <li>Local taxi service available</li>
+                    <li>Public transport nearby</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-box">
+            <button class="accordion"><i class="fa-solid fa-hotel"></i>Wellness</button>
+            <div class="panel">
+                <ul>
+                    <li>Daily housekeeping</li>
+                    <li>Hygienic & sanitized rooms</li>
+                    <li>First-aid assistance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-box">
+            <button class="accordion"><i class="fa-solid fa-file-lines"></i>Hotel Policies</button>
+            <div class="panel">
+                <h3>Check-in & Check-out</h3>
+                <ul>
+                    <li>Check-in: 12:00 PM</li>
+                    <li>Check-out: 11:00 AM</li>
+                </ul>
+
+                <h3>House Rules</h3>
+                <ul>
+                    <li>Valid ID required</li>
+                    <li>No smoking in rooms</li>
+                    <li>Pets not allowed</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-box">
+            <button class="accordion"><i class="fa-solid fa-credit-card"></i>Payments</button>
+            <div class="panel">
+                <ul>
+                    <li>Cash</li>
+                    <li>Credit / Debit Cards</li>
+                    <li>UPI & Online Payments</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-box">
+            <button class="accordion"><i class="fa-solid fa-utensils"></i>Food & Drink</button>
+            <div class="panel">
+                <ul>
+                    <li>Pure Vegetarian</li>
+                    <li>Special Rajasthani Food</li>
+                    <li>Breakfast, Lunch & Dinner</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!-- GRID END -->
+
+</section>
+
+<footer>
+    <p>© 2024 Royal Hotel</p>
+</footer>
+<script>
+const accordions = document.querySelectorAll(".accordion");
+
+accordions.forEach(button => {
+    button.addEventListener("click", () => {
+
+        // Close all other accordions
+        accordions.forEach(other => {
+            if (other !== button) {
+                other.classList.remove("active");
+                other.nextElementSibling.style.display = "none";
+            }
+        });
+
+        // Toggle current accordion
+        button.classList.toggle("active");
+        const panel = button.nextElementSibling;
+
+        if (button.classList.contains("active")) {
+            panel.style.display = "block";
+        } else {
+            panel.style.display = "none";
+        }
+    });
+});
+</script>
+
+</body>
+</html>
